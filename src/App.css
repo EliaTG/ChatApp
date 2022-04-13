@@ -1,38 +1,62 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Roboto&family=Source+Sans+Pro:ital,wght@0,400;1,200&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+*,
+  *::after,
+  *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/*  Login */
+.Login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background: #157afe;
+    /* background: linear-gradient(90deg, rgba(117,84,160,1) 7%, rgba(117,84,160,1) 17%, rgba(106,95,168,1) 29%, rgba(99,103,174,1) 44%, rgba(87,116,184,1) 66%, rgba(70,135,198,1) 83%, rgba(44,163,219,1) 96%, rgba(22,188,237,1) 100%, rgba(0,212,255,1) 100%);   */
 }
+.box{
+    background-color: white;
+    border-radius: 5px;
+    height: 400px;
+    width: 350px;
+}
+.box svg{
+    margin: 20px 0px 0px 0px;
+}
+.title{
+    text-align: center;
+    font-size: 1.9em;
+    color: #464D58;
+    margin: 20px 0px 10px 0px;
+}
+form{
+    display: flex;
+    justify-content: center;
+}
+.google-auth, .facebook-auth{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #f2f2f2;
+    border-radius: 50%;
+    background-color: #e8ecf3;
+    height: 50px;
+    width: 50px;
+    margin: 10px 6px 10px 6px;
+    cursor: pointer;
 
-.App-link {
-  color: #61dafb;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.google-auth img, .facebook-auth img{
+height: 30px;
+width: 30px;
 }
+/* .facebook-auth img{
+    height: 30px;
+    width: 30px;
+} */
