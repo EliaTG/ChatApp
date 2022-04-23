@@ -1,24 +1,25 @@
 import './App.css';
 import Login from './components/Login';
-// import Chats from './components/Chats';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-
-// import {AuthProvider} from '../contexts/AuthContext';
+import Chats from './components/Chats';
+import {Routes, Route} from 'react-router-dom';
+import ProtectedRoute from './components/ProtectedRoute';
+import {UserAuthContextProvider} from './context/AuthContext';
 
 
 function App() {
   
   return (
     <div style={{fontFamily: 'Roboto'}} className="App">
-      <Router>
-        {/* {AuthProvider} */}
-          <Login/>
-            <Switch>
-                {/* <Route path="/chats" components={Chats}/> */}
-                <Route path="/" components={Login} />
-            </Switch>
-        {/* {AuthProvider} */}
-      </Router>
+        <UserAuthContextProvider> 
+          <Routes>
+                <Route path="/chats" element={
+                <ProtectedRoute>
+                    <Chats />
+                </ProtectedRoute>
+                } />
+                <Route path="/" element={<Login />} />
+          </Routes>
+        </UserAuthContextProvider> 
     </div>
   );
 }

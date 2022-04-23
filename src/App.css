@@ -39,7 +39,7 @@ form{
     display: flex;
     justify-content: center;
 }
-.google-auth, .facebook-auth{
+.google-auth, .facebook-auth, .github-auth{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,11 +52,29 @@ form{
     cursor: pointer;
 
 }
-.google-auth img, .facebook-auth img{
+.google-auth img, .facebook-auth img, .github-auth img{
 height: 30px;
 width: 30px;
 }
-/* .facebook-auth img{
-    height: 30px;
-    width: 30px;
-} */
+
+/* Chats */
+.chats{
+height: 100vh;
+width: 100vw;
+}
+.navbar{
+    height: 10vh;
+    width: 100%;
+    background: #157afe;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 30px;
+}
+.logo{
+    font-size: 1.9rem;
+}
+.logout-tab{
+    cursor: pointer;
+}
