@@ -11,13 +11,33 @@ import {useNavigate} from 'react-router-dom';
 
 const Login= () => {
     const [error, setError] = useState("");
-    const { signInWithGoogle } = useUserAuth();
+    const { signInWithGoogle, signInWithGithub, signInWitFacebook } = useUserAuth();
+    // const { signInWithGithub } = useUserAuth();
     const navigate = useNavigate();
+    
 
     const handleGoogleSignIn = async (e) => {
-        e.preventDefault();
+    e.preventDefault();
         try {
             await signInWithGoogle();
+            navigate('/chats');
+        } catch (error) {
+            setError(error.message)
+        }
+    }
+    const handleGithubSignIn = async (e) => {
+        e.preventDefault();
+        try {
+            await signInWithGithub();
+            navigate('/chats');
+        } catch (error) {
+            setError(error.message)
+        }
+    }
+    const handleFacebookSignIn = async (e) => {
+        e.preventDefault();
+        try {
+            await signInWitFacebook();
             navigate('/chats');
         } catch (error) {
             setError(error.message)
@@ -42,11 +62,13 @@ const Login= () => {
                    >
                         <img  src={google} alt="Google logo"  />
                    </div>
-                   <div className="facebook-auth">
+                   <div className="facebook-auth"
+                     onClick={handleFacebookSignIn}
+                   >
                         <img  src={facebook} alt="Facebook logo"  />
                    </div>
                    <div className="github-auth"
-                    // onClick={signInWithGithub}
+                     onClick={handleGithubSignIn}
                    >
                         <img  src={github} alt="Github logo"  />
                    </div>
@@ -55,9 +77,6 @@ const Login= () => {
     </div>
     )
 }
-
-
-    // Loading animation
 
 
 export default Login

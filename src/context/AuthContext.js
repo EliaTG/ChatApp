@@ -6,7 +6,6 @@ import {
     FacebookAuthProvider,
     signInWithPopup,
     onAuthStateChanged,
-    updateCurrentUser
 } from "firebase/auth";
 import {auth} from '../firebase';
 
@@ -32,8 +31,16 @@ export function UserAuthContextProvider ({children}){
             const googleProvider = new GoogleAuthProvider();
             return signInWithPopup(auth, googleProvider);
     };
+    function signInWithGithub () {
+        const githubProvider = new GithubAuthProvider();
+        return signInWithPopup(auth, githubProvider);
+    };
+    function signInWithFacebook () {
+        const facebookProvider = new FacebookAuthProvider();
+        return signInWithPopup(auth, facebookProvider);
+    };
 
-    return <AuthContext.Provider value={{user,signInWithGoogle, LogOut}} >
+    return <AuthContext.Provider value={{user,signInWithGoogle, signInWithGithub,signInWithFacebook, LogOut}} >
         {children}
     </AuthContext.Provider>
 }
