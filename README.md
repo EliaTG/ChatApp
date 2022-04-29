@@ -1,6 +1,6 @@
 # Luxchat Aplication
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Tech stack: REACT, Chat Engine, Firebase.
 
 ## Available Scripts
 
